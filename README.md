@@ -1,2 +1,2 @@
-# connector-4-javascript
-Connector 4 JavaScript project for ITI
+# connect-4-javascript
+Connect 4 JavaScript project for ITI
