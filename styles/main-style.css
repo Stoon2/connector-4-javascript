@@ -16,6 +16,7 @@ body {
 
 h1 {
   text-transform: uppercase;
+  margin: 40px;
 }
 
 .game-board {
@@ -125,7 +126,10 @@ h1 {
 
 .status {
   display: block;
-  font-size: 20px;
+  font-size: 30px;
+  font-family:serif;
+  font-style: italic;
+  color:black;
 }
 
 .left-border {
@@ -159,3 +163,5 @@ h1 {
 .left-border.bottom-border {
   border-radius: 0 0 0 10px;
 }
+
+
