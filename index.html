@@ -1,73 +1,29 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css">
-  <title>Connect Four!</title>
-</head>
-<body>
-<h1>Connect Four</h1>
-
-<span class="status"></span>
-
-  <div class="game-board">
-  <div class="cell row-top col-0"></div>
-  <div class="cell row-top col-1"></div>
-  <div class="cell row-top col-2"></div>
-  <div class="cell row-top col-3"></div>
-  <div class="cell row-top col-4"></div>
-  <div class="cell row-top col-5"></div>
-  <div class="cell row-top col-6"></div>
-  <div class="cell row-0 col-0 left-border top-border"></div>
-  <div class="cell row-0 col-1 top-border"></div>
-  <div class="cell row-0 col-2 top-border"></div>
-  <div class="cell row-0 col-3 top-border"></div>
-  <div class="cell row-0 col-4 top-border"></div>
-  <div class="cell row-0 col-5 top-border"></div>
-  <div class="cell row-0 col-6 top-border right-border"></div>
-  <div class="cell row-1 col-0 left-border"></div>
-  <div class="cell row-1 col-1"></div>
-  <div class="cell row-1 col-2"></div>
-  <div class="cell row-1 col-3"></div>
-  <div class="cell row-1 col-4"></div>
-  <div class="cell row-1 col-5"></div>
-  <div class="cell row-1 col-6 right-border"></div>
-  <div class="cell row-2 col-0 left-border"></div>
-  <div class="cell row-2 col-1"></div>
-  <div class="cell row-2 col-2"></div>
-  <div class="cell row-2 col-3"></div>
-  <div class="cell row-2 col-4"></div>
-  <div class="cell row-2 col-5"></div>
-  <div class="cell row-2 col-6 right-border"></div>
-  <div class="cell row-3 col-0 left-border"></div>
-  <div class="cell row-3 col-1"></div>
-  <div class="cell row-3 col-2"></div>
-  <div class="cell row-3 col-3"></div>
-  <div class="cell row-3 col-4"></div>
-  <div class="cell row-3 col-5"></div>
-  <div class="cell row-3 col-6 right-border"></div>
-  <div class="cell row-4 col-0 left-border"></div>
-  <div class="cell row-4 col-1"></div>
-  <div class="cell row-4 col-2"></div>
-  <div class="cell row-4 col-3"></div>
-  <div class="cell row-4 col-4"></div>
-  <div class="cell row-4 col-5"></div>
-  <div class="cell row-4 col-6 right-border"></div>
-  <div class="cell row-5 col-0 bottom-border left-border"></div>
-  <div class="cell row-5 col-1 bottom-border"></div>
-  <div class="cell row-5 col-2 bottom-border"></div>
-  <div class="cell row-5 col-3 bottom-border"></div>
-  <div class="cell row-5 col-4 bottom-border"></div>
-  <div class="cell row-5 col-5 bottom-border"></div>
-  <div class="cell row-5 col-6 bottom-border right-border"></div>
-</div>
-<div class="footer">
-   <button class="start">Start</button>
-   <button class="reset">Reset</button> 
-
-</div>
-</body>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/landing.style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <video id="video-background" autoplay muted loop id="myVideo">
+      <source src="/res/cloud-background.mov" type="video/mp4">
+    </video>
+    <div class="main-container">
+      <h1>Welcome to Connector Four 👾</h1>
+      <button id="start-btn">Start!</button>
+      <button id="computer-btn">Vs. Computer</button>
+      <button id="human-btn">Vs. Human</button>
+    </div>
+    <script src="/js/landing.js" async defer></script>
+  </body>
 </html>
