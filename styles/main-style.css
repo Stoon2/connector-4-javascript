@@ -19,15 +19,17 @@ body {
 	align-items: center;
 	background: white;
 	display: flex;
+	flex-wrap: wrap;
 	flex-direction: column;
 	font-family: sans-serif;
-	padding: 25px;
 	width: 100%;
+	height: 70%;
 }
 
 h1 {
 	text-transform: uppercase;
-	margin: 40px;
+	margin: 10px;
+	font-size: 3rem;
 }
 
 .game-board {
@@ -35,8 +37,9 @@ h1 {
 	grid-template-columns: repeat(7, 1fr);
 	grid-template-rows: repeat(7, 1fr);
 	height: 700px;
-	margin: 10px 0 25px;
 	width: 700px;
+	/* background-image: url("../res/pixel_sky.png"); */
+	/* background-size: 700px 700px; */
 }
 
 .cell {

@@ -34,6 +34,10 @@ else {
     ", do you want to continue using the same user-name?"))){
         prompt_for_usernames = true;
     }
+    else {
+        localStorage.setItem('lastPlayed', new Date().toLocaleString());
+        stored_last_played = localStorage.getItem('lastPlayed');
+    }
 }
 
 if(!prompt_for_usernames){
