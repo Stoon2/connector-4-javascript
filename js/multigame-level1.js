@@ -30,8 +30,8 @@ const rows = [row0, row1, row2, row3, row4, row5, topRow];
 // variables
 let gameIsLive = false;
 let yellowIsNext = true;
-let playerone = sessionStorage.getItem('firstPlayer');
-let playertwo = sessionStorage.getItem('secondPlayer');
+let playerone = localStorage.getItem('firstPlayer');
+let playertwo = localStorage.getItem('secondPlayer');
 
 // Functions
 const getClassListArray = (cell) => {

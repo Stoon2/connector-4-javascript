@@ -80,7 +80,7 @@ levelFourBtn.addEventListener('click', ()=>{
         window.location.href = "../html/single-level-1.html";
     }
     else{
-        window.location.href = "../html/multigamelevel1.html";
+        window.location.href = "../html/mulitgamelevel1.html";
     }
 });
 
