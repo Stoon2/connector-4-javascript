@@ -29,6 +29,12 @@ prompt_for_usernames = false;
 if(stored_player == null){
     prompt_for_usernames = true;
 }
+else {
+    if(!confirm("Welcome back ".concat(localStorage.getItem("firstPlayer").concat( 
+    ", do you want to continue using the same user-name?")))){
+        prompt_for_usernames = true;
+    }
+}
 
 startBtn.addEventListener('click', ()=>{
     startBtn.style.display = 'none';
