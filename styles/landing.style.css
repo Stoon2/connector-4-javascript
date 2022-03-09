@@ -18,12 +18,13 @@
 .main-container {
 	display: flex;
 	flex-wrap: wrap;
-	width: 100%;
+	width: 80%;
+	height: 80%;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	margin: 10rem auto;
-	font-size: 5rem;
+	font-size: 3rem;
 	text-align: center;
 }
 
@@ -55,4 +56,32 @@
 	font-size: 4rem;
 	border-radius: 2rem;
 	box-shadow: 0.2rem 0.5rem 1rem 0.2rem black;
+}
+
+#level-1-btn {
+	display: none;
+	margin: 5rem;
+	height: 10rem;
+	width: 30rem;
+	font-size: 4rem;
+	border-radius: 2rem;
+	box-shadow: 0.2rem 0.5rem 1rem 0.2rem black;
+}
+
+#level-2-btn {
+	display: none;
+	margin: 5rem;
+	height: 10rem;
+	width: 30rem;
+	font-size: 4rem;
+	border-radius: 2rem;
+	box-shadow: 0.2rem 0.5rem 1rem 0.2rem black;
+}
+
+#mode-choice-header {
+	display: none;
+}
+
+#level-choice-header {
+	display: none;
 }

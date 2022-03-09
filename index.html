@@ -19,10 +19,17 @@
       <source src="/res/cloud-background.mov" type="video/mp4">
     </video>
     <div class="main-container">
-      <h1>Welcome to Connector Four 👾</h1>
+      <!-- First show on landing -->
+      <h1 id="greeting-header">Welcome to Connect Four 🕹️ Please press start to configure your game</h1>
       <button id="start-btn">Start!</button>
+      <!-- 1st Choice -->
+      <h1 id="mode-choice-header">Please Choose Your Game-Mode</h1>
       <button id="computer-btn">Vs. Computer</button>
       <button id="human-btn">Vs. Human</button>
+      <!-- 2nd Choice -->
+      <h1 id="level-choice-header">Choose Level 1 or Level 2 (4 or 5 to win)</h1>
+      <button id="level-1-btn">Win with 4</button>
+      <button id="level-2-btn">Win with 5</button>
     </div>
     <script src="/js/landing.js" async defer></script>
   </body>
