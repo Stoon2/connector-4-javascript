@@ -24,16 +24,21 @@ let single_level_choice = false;
 
 // Check localStorage for previous data, if not found then prompt user
 stored_player = localStorage.getItem('firstPlayer');
+stored_last_played = localStorage.getItem('lastPlayed');
 prompt_for_usernames = false;
-
 if(stored_player == null){
     prompt_for_usernames = true;
 }
 else {
-    if(!confirm("Welcome back ".concat(localStorage.getItem("firstPlayer").concat( 
-    ", do you want to continue using the same user-name?")))){
+    if(!confirm("Welcome back ".concat(stored_player).concat( 
+    ", do you want to continue using the same user-name?"))){
         prompt_for_usernames = true;
     }
+}
+
+if(!prompt_for_usernames){
+    greetingHeader.innerHTML = "<h1>Welcome back ".concat(stored_player).concat(", You last played: ").concat(stored_last_played).concat("</h1>");
+    greetingHeader.style.fontSize = "3rem"
 }
 
 startBtn.addEventListener('click', ()=>{
@@ -52,6 +57,7 @@ computerBtn.addEventListener('click', ()=>{
     if(prompt_for_usernames){
         firstPlayer = prompt("Please enter your name");
         localStorage.setItem('firstPlayer', firstPlayer);
+        localStorage.setItem('lastPlayed', new Date().toLocaleString());
     }
     single_level_choice = true;
 });
