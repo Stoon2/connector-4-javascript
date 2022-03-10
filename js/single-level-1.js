@@ -89,6 +89,26 @@ const getColorOfCell = (cell) => {
   return null;
 };
 
+// Confirm message to play again or redirect to main page
+const displayConfirmMessage = () =>{
+  const playAgain = confirm("Do you want to play again?");
+  if(playAgain){
+    for (const row of rows) {
+      for (const cell of row) {
+        cell.classList.remove('red');
+        cell.classList.remove('yellow');
+        cell.classList.remove('win');
+      }
+    }
+    gameIsLive = true;
+    yellowIsNext = true;
+    statusSpan.textContent = '';
+  }
+  else{
+    window.location.href = "../index.html";
+  }
+}
+
 // Check win function
 const checkWinningCells = (cells) => {
   if (cells.length < 4) return false;
@@ -100,7 +120,7 @@ const checkWinningCells = (cells) => {
 
   // players names to print on winning 
   if(yellowIsNext){
-    statusSpan.textContent =`Congratulations ${playerone} has won!`
+    statusSpan.textContent =`Congratulations ${playerone} has won!` + String.fromCodePoint(0x1F64C);
   }
   else{
     statusSpan.textContent =`You lose!` + String.fromCodePoint(0x1F44E);
@@ -139,6 +159,9 @@ const checkStatusOfGame = (cell) => {
     }
   }
   let isWinningCombo = checkWinningCells(winningCells);
+  if(isWinningCombo){
+    setTimeout(displayConfirmMessage, 1000);
+  }
   if (isWinningCombo) return;
 
 
@@ -166,68 +189,12 @@ const checkStatusOfGame = (cell) => {
     }
   }
   isWinningCombo = checkWinningCells(winningCells);
+  if(isWinningCombo){
+    setTimeout(displayConfirmMessage, 1000);
+  }
   if (isWinningCombo) return;
 
-
-  // Check on diagonalls 
-  winningCells = [cell];
-  rowToCheck = rowIndex + 1;
-  colToCheck = colIndex - 1;
-  while (colToCheck >= 0 && rowToCheck <= 5) {
-    const cellToCheck = rows[rowToCheck][colToCheck];
-    if (getColorOfCell(cellToCheck) === color) {
-      winningCells.push(cellToCheck);
-      rowToCheck++;
-      colToCheck--;
-    } else {
-      break;
-    }
-  }
-  rowToCheck = rowIndex - 1;
-  colToCheck = colIndex + 1;
-  while (colToCheck <= 6 && rowToCheck >= 0) {
-    const cellToCheck = rows[rowToCheck][colToCheck];
-    if (getColorOfCell(cellToCheck) === color) {
-      winningCells.push(cellToCheck);
-      rowToCheck--;
-      colToCheck++;
-    } else {
-      break;
-    }
-  }
-  isWinningCombo = checkWinningCells(winningCells);
-  if (isWinningCombo) return;
-
-
-  // Check on diagonalls 
-  winningCells = [cell];
-  rowToCheck = rowIndex - 1;
-  colToCheck = colIndex - 1;
-  while (colToCheck >= 0 && rowToCheck >= 0) {
-    const cellToCheck = rows[rowToCheck][colToCheck];
-    if (getColorOfCell(cellToCheck) === color) {
-      winningCells.push(cellToCheck);
-      rowToCheck--;
-      colToCheck--;
-    } else {
-      break;
-    }
-  }
-  rowToCheck = rowIndex + 1;
-  colToCheck = colIndex + 1;
-  while (colToCheck <= 6 && rowToCheck <= 5) {
-    const cellToCheck = rows[rowToCheck][colToCheck];
-    if (getColorOfCell(cellToCheck) === color) {
-      winningCells.push(cellToCheck);
-      rowToCheck++;
-      colToCheck++;
-    } else {
-      break;
-    }
-  }
-  isWinningCombo = checkWinningCells(winningCells);
-  if (isWinningCombo) return;
-
+  
   // Check for draw 
   const rowsWithoutTop = rows.slice(0, 6);
   for (const row of rowsWithoutTop) {
@@ -241,6 +208,9 @@ const checkStatusOfGame = (cell) => {
 
   gameIsLive = false;
   statusSpan.textContent = "Draw Game!";
+  if(isWinningCombo){
+    setTimeout(displayConfirmMessage, 1000);
+  }
 };
 
 
