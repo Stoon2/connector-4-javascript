@@ -16,8 +16,8 @@ let modeChoiceHeader = document.getElementById("mode-choice-header");
 let levelChoiceHeader = document.getElementById("level-choice-header");
 
 // Usernames
-let firstPlayer = "Default"
-let secondPlayer = "Default 2"
+let firstPlayer = localStorage.getItem('firstPlayer');
+let secondPlayer = localStorage.getItem('lastPlayed');
 
 // Choice combination`
 let single_level_choice = false;
@@ -30,13 +30,12 @@ if(stored_player == null){
     prompt_for_usernames = true;
 }
 else {
-    if(!confirm("Welcome back ".concat(stored_player).concat( 
+    if(confirm("Welcome back ".concat(stored_player).concat( 
     ", do you want to continue using the same user-name?"))){
-        prompt_for_usernames = true;
+        stored_last_played = localStorage.getItem('lastPlayed');
     }
     else {
-        localStorage.setItem('lastPlayed', new Date().toLocaleString());
-        stored_last_played = localStorage.getItem('lastPlayed');
+        prompt_for_usernames = true;
     }
 }
 
@@ -61,7 +60,7 @@ computerBtn.addEventListener('click', ()=>{
     if(prompt_for_usernames){
         firstPlayer = prompt("Please enter your name");
         localStorage.setItem('firstPlayer', firstPlayer);
-        localStorage.setItem('lastPlayed', new Date().toLocaleString());
+        localStorage.setItem('lastPlayed', stored_last_played);
     }
     single_level_choice = true;
 });
@@ -80,6 +79,7 @@ humanBtn.addEventListener('click', ()=>{
 });
 
 levelFourBtn.addEventListener('click', ()=>{
+    localStorage.setItem('lastPlayed', new Date().toLocaleString());
     if(single_level_choice){
         window.location.href = "../html/single-level-1.html";
     }
@@ -89,6 +89,7 @@ levelFourBtn.addEventListener('click', ()=>{
 });
 
 levelFiveBtn.addEventListener('click', ()=>{
+    localStorage.setItem('lastPlayed', new Date().toLocaleString());
     if(single_level_choice){
         console.log("Single player level 2 is not implemented yet");
         // window.location.href = "../html/single-level2.html";
