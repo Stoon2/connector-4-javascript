@@ -91,8 +91,7 @@ levelFourBtn.addEventListener('click', ()=>{
 levelFiveBtn.addEventListener('click', ()=>{
     localStorage.setItem('lastPlayed', new Date().toLocaleString());
     if(single_level_choice){
-        console.log("Single player level 2 is not implemented yet");
-        // window.location.href = "../html/single-level2.html";
+        window.location.href = "../html/single-level-2.html";
     }
     else{
         window.location.href = "../html/multi-level2.html";
