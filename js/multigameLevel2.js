@@ -4,6 +4,7 @@ const topCells = document.querySelectorAll('.cell.row-top');
 const resetButton = document.querySelector('.reset');
 const startButton = document.querySelector('.start');
 const statusSpan = document.querySelector('.status');
+const header = document.getElementById("header");
 
 // columns
 const column0 = [allCells[35], allCells[28], allCells[21], allCells[14], allCells[7], allCells[0], topCells[0]];
@@ -257,7 +258,12 @@ const handleCellClick = (e) => {
 
   openCell.classList.add(yellowIsNext ? 'yellow' : 'red');
   checkStatusOfGame(openCell);
-
+  if(!yellowIsNext){
+    header.textContent = "Your turn, ".concat(playerone)
+  }
+  else{
+    header.textContent = "Your turn, ".concat(playertwo)
+  }
   yellowIsNext = !yellowIsNext;
   clearColorFromTop(colIndex);
   if (gameIsLive) {
@@ -281,6 +287,14 @@ for (const row of rows) {
 
 startButton.addEventListener("click", function(event) {
   gameIsLive=true;
+  console.log(!yellowIsNext);
+
+  if(!yellowIsNext){
+    header.textContent = "Your turn, ".concat(playertwo); // Display current player's turn
+  }
+  else{
+    header.textContent = "Your turn, ".concat(playerone); // Display current player's turn
+  }
 });
 
 

@@ -4,6 +4,7 @@ const topCells = document.querySelectorAll('.cell.row-top');
 const resetButton = document.querySelector('.reset');
 const startButton = document.querySelector('.start');
 const statusSpan = document.querySelector('.status');
+const header = document.getElementById("header");
 
 // columns
 const column0 = [allCells[35], allCells[28], allCells[21], allCells[14], allCells[7], allCells[0], topCells[0]];
@@ -31,6 +32,7 @@ const rows = [row0, row1, row2, row3, row4, row5, topRow];
 let gameIsLive = false;
 let yellowIsNext = true;
 let playerone = localStorage.getItem('firstPlayer');
+header.textContent = "Connect Four, welcome ".concat(playerone);
 //let playertwo = localStorage.getItem('secondPlayer');
 
 // Functions

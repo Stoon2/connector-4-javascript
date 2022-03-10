@@ -144,8 +144,8 @@ h1 {
 .status {
 	display: block;
 	font-size: 30px;
-	font-family: serif;
-	font-style: italic;
+	text-decoration: underline;
+	font-family: "Righteous", cursive;
 	color: black;
 }
 
