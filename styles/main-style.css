@@ -180,3 +180,35 @@ h1 {
 .left-border.bottom-border {
 	border-radius: 0 0 0 10px;
 }
+
+.confirm {
+	position: fixed;
+	display: none;
+	text-align: center;
+	border-radius: 5px;
+	border: 2px solid black;
+	margin-top: 100px;
+	background-color: lightgray;
+	width:350px;
+	height: 150px;
+	opacity: 80%;
+	z-index: 1000;
+}
+
+.confirm button{
+	border-radius: 5px;
+	font-size:18px;
+	font-weight: bold;
+	padding: 7px 15px;
+	margin: 25px 25px;
+}
+
+.confirm button:hover{
+	background-color: gray;
+}
+
+.confirm p{
+	font-size:18px;
+	font-weight: bold;
+	margin-top: 25px;
+}

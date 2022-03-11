@@ -5,6 +5,9 @@ const resetButton = document.querySelector('.reset');
 const startButton = document.querySelector('.start');
 const statusSpan = document.querySelector('.status');
 const header = document.getElementById("header");
+const customConfirm = document.querySelector('.confirm');
+const yesBtn = document.getElementById("yes");
+const noBtn = document.getElementById("no");
 
 // columns
 const column0 = [allCells[35], allCells[28], allCells[21], allCells[14], allCells[7], allCells[0], topCells[0]];
@@ -80,6 +83,11 @@ const getColorOfCell = (cell) => {
   return null;
 };
 
+// Confirm message to play again or redirect to main page
+const displayConfirmMessage = () =>{
+  customConfirm.style.display = 'block';
+}
+
 const checkWinningCells = (cells) => {
   if (cells.length < 5) return false;
 
@@ -88,6 +96,7 @@ const checkWinningCells = (cells) => {
     cell.classList.add('win');
   }
   statusSpan.textContent =` Congratulations ${yellowIsNext ? playerone : playertwo } has won!`
+  + String.fromCodePoint(0x1F64C);
   return true;
 };
 
@@ -121,6 +130,9 @@ const checkStatusOfGame = (cell) => {
     }
   }
   let isWinningCombo = checkWinningCells(winningCells);
+  if(isWinningCombo){
+    setTimeout(displayConfirmMessage, 500);
+  }
   if (isWinningCombo) return;
 
 
@@ -149,6 +161,9 @@ const checkStatusOfGame = (cell) => {
     }
   }
   isWinningCombo = checkWinningCells(winningCells);
+  if(isWinningCombo){
+    setTimeout(displayConfirmMessage, 500);
+  }
   if (isWinningCombo) return;
 
 
@@ -180,6 +195,9 @@ const checkStatusOfGame = (cell) => {
     }
   }
   isWinningCombo = checkWinningCells(winningCells);
+  if(isWinningCombo){
+    setTimeout(displayConfirmMessage, 500);
+  }
   if (isWinningCombo) return;
 
 
@@ -210,6 +228,9 @@ const checkStatusOfGame = (cell) => {
     }
   }
   isWinningCombo = checkWinningCells(winningCells);
+  if(isWinningCombo){
+    setTimeout(displayConfirmMessage, 500);
+  }
   if (isWinningCombo) return;
 
   // Check for a draw
@@ -226,6 +247,7 @@ const checkStatusOfGame = (cell) => {
 
   gameIsLive = false;
   statusSpan.textContent = "Draw Game!";
+  setTimeout(displayConfirmMessage, 500);
 };
 
 
@@ -312,4 +334,22 @@ resetButton.addEventListener('click', () => {
   if(yellowIsNext){
     header.textContent = "Your turn, ".concat(playerone); // Display current player's turn
   }
+});
+
+yesBtn.addEventListener('click',() => {
+  for (const row of rows) {
+    for (const cell of row) {
+      cell.classList.remove('red');
+      cell.classList.remove('yellow');
+      cell.classList.remove('win');
+    }
+  }
+  gameIsLive = true;
+  yellowIsNext = true;
+  statusSpan.textContent = '';
+  customConfirm.style.display = 'none';
+});
+
+noBtn.addEventListener('click',() => {
+  window.location.href = "../index.html";
 });
