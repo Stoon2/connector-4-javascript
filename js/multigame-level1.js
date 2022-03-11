@@ -244,9 +244,9 @@ var executed = false;
 startButton.addEventListener("click", function(event) {
 
   if (!executed) {
-  executed = true;
-  gameIsLive=true;
-
+    executed = true;
+    gameIsLive=true;
+  }
 
   if(yellowIsNext){
     header.textContent = "Your turn, ".concat(playerone); // Display current player's turn
