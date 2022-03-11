@@ -265,8 +265,14 @@ for (const row of rows) {
   }
 }
 
+var executed = false;
+
 startButton.addEventListener("click", function(event) {
-  gameIsLive=true;
+
+  if (!executed) {
+    executed = true;
+    gameIsLive=true;
+  }
 });
 
 
