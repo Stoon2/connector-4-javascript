@@ -16,15 +16,14 @@ let modeChoiceHeader = document.getElementById("mode-choice-header");
 let levelChoiceHeader = document.getElementById("level-choice-header");
 
 // Usernames
-let firstPlayer = localStorage.getItem('firstPlayer');
-let secondPlayer = localStorage.getItem('lastPlayed');
+let firstPlayer;
+let  secondPlayer;
 
 // Choice combination`
 let single_level_choice = false;
-
 // Check localStorage for previous data, if not found then prompt user
-stored_player = localStorage.getItem('firstPlayer');
-stored_last_played = localStorage.getItem('lastPlayed');
+let stored_player = localStorage.getItem('firstPlayer');
+let stored_last_played = localStorage.getItem('lastPlayed');
 prompt_for_usernames = false;
 if(stored_player == null){
     prompt_for_usernames = true;
@@ -55,46 +54,76 @@ startBtn.addEventListener('click', ()=>{
 
 computerBtn.addEventListener('click', ()=>{
     // Show two buttons for user to pick level
-    updateBtns();
     // Take user input for 1 username and save in localStorage
     if(prompt_for_usernames){
         firstPlayer = prompt("Please enter your name");
-        localStorage.setItem('firstPlayer', firstPlayer);
-        localStorage.setItem('lastPlayed', stored_last_played);
     }
+    while(firstPlayer == null){
+        firstPlayer = prompt("Please enter your name");
+    }
+    localStorage.setItem('firstPlayer', firstPlayer);
+    localStorage.setItem('lastPlayed', stored_last_played);
+    updateBtns();
     single_level_choice = true;
 });
 
 humanBtn.addEventListener('click', ()=>{
     // Show two buttons for user to pick level
-    updateBtns();
     // Take user input for 2 usernames and save in localStorage
     if(prompt_for_usernames){
-        firstPlayer = prompt("Please enter the first player's name");
-        localStorage.setItem('firstPlayer', firstPlayer);
+        firstPlayer = prompt("Please the first player's name");
+        secondPlayer = prompt("Please enter the second player's name");
     }
-    secondPlayer = prompt("Please enter the second player's name");
+    while(firstPlayer == null){
+        firstPlayer = prompt("Please the first player's name");
+    }
+    while(secondPlayer == null){
+        secondPlayer = prompt("Please enter the second player's name");
+    }
+    updateBtns();
     localStorage.setItem('secondPlayer', secondPlayer);
+    localStorage.setItem('firstPlayer', firstPlayer);
+    localStorage.setItem('lastPlayed', stored_last_played);
     single_level_choice = false;
 });
 
 levelFourBtn.addEventListener('click', ()=>{
     localStorage.setItem('lastPlayed', new Date().toLocaleString());
     if(single_level_choice){
-        window.location.href = "../html/single-level-1.html";
+        if(firstPlayer != null){
+            window.location.href = "../html/single-level-1.html";
+        }
+        else {
+            alert("You need to enter a username, please go back!");
+        }
     }
     else{
-        window.location.href = "../html/mulitgamelevel1.html";
+        if((firstPlayer != null) && (secondPlayer != null)){
+            window.location.href = "../html/mulitgamelevel1.html";
+        }
+        else {
+            alert("You need to enter two usernames, please go back!");
+        }
     }
 });
 
 levelFiveBtn.addEventListener('click', ()=>{
     localStorage.setItem('lastPlayed', new Date().toLocaleString());
     if(single_level_choice){
-        window.location.href = "../html/single-level-2.html";
+        if(firstPlayer != null){
+            window.location.href = "../html/single-level-2.html";
+        }
+        else {
+            alert("You need to enter a username, please go back!");
+        }
     }
     else{
-        window.location.href = "../html/multi-level2.html";
+        if((firstPlayer != null) && (secondPlayer != null)){
+            window.location.href = "../html/multi-level2.html";
+        }
+        else {
+            alert("You need to enter two usernames, please go back!");
+        }
     }
 });
 

@@ -309,4 +309,7 @@ resetButton.addEventListener('click', () => {
   gameIsLive = true;
   yellowIsNext = true;
   statusSpan.textContent = '';
+  if(yellowIsNext){
+    header.textContent = "Your turn, ".concat(playerone); // Display current player's turn
+  }
 });
