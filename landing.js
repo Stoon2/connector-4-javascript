@@ -98,7 +98,7 @@ levelFourBtn.addEventListener('click', ()=>{
         if(firstPlayer != null){
             localStorage.removeItem("songTime")
             localStorage.setItem("songTime", document.getElementsByTagName("audio")[0].currentTime)
-            window.location.href = "../html/single-level-1.html";
+            window.location.href = "single-level-1.html";
         }
         else {
             localStorage.removeItem("songTime")
@@ -110,7 +110,7 @@ levelFourBtn.addEventListener('click', ()=>{
         if((firstPlayer != null) && (secondPlayer != null)){
             localStorage.removeItem("songTime")
             localStorage.setItem("songTime", document.getElementsByTagName("audio")[0].currentTime)
-            window.location.href = "../html/mulitgamelevel1.html";
+            window.location.href = "mulitgamelevel1.html";
         }
         else {
             localStorage.removeItem("songTime")
@@ -126,7 +126,7 @@ levelFiveBtn.addEventListener('click', ()=>{
         if(firstPlayer != null){
             localStorage.removeItem("songTime")
             localStorage.setItem("songTime", document.getElementsByTagName("audio")[0].currentTime)
-            window.location.href = "../html/single-level-2.html";
+            window.location.href = "single-level-2.html";
         }
         else {
             localStorage.removeItem("songTime")
@@ -138,7 +138,7 @@ levelFiveBtn.addEventListener('click', ()=>{
         if((firstPlayer != null) && (secondPlayer != null)){
             localStorage.removeItem("songTime")
             localStorage.setItem("songTime", document.getElementsByTagName("audio")[0].currentTime)
-            window.location.href = "../html/multi-level2.html";
+            window.location.href = "multi-level2.html";
         }
         else {
             localStorage.removeItem("songTime")
