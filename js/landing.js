@@ -32,6 +32,7 @@ else {
     if(confirm("Welcome back ".concat(stored_player).concat( 
     ", do you want to continue using the same user-name?"))){
         stored_last_played = localStorage.getItem('lastPlayed');
+        firstPlayer = localStorage.getItem("firstPlayer");
     }
     else {
         prompt_for_usernames = true;
@@ -57,11 +58,15 @@ computerBtn.addEventListener('click', ()=>{
     // Take user input for 1 username and save in localStorage
     if(prompt_for_usernames){
         firstPlayer = prompt("Please enter your name");
+        localStorage.setItem('firstPlayer', firstPlayer);
     }
-    while(firstPlayer == null){
-        firstPlayer = prompt("Please enter your name");
+    else{
+        console.log("Here")
+        console.log(firstPlayer)
+        while(firstPlayer == null){
+            firstPlayer = prompt("Please enter your name");
+        }
     }
-    localStorage.setItem('firstPlayer', firstPlayer);
     localStorage.setItem('lastPlayed', stored_last_played);
     updateBtns();
     single_level_choice = true;
