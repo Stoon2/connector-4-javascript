@@ -4,6 +4,7 @@
 Connect 4 JavaScript project for ITI .
 
 It is a very enjoyable game that you can play with the Computer and with a friend on the same machine.
+link to live version: https://stoon2.github.io/connector-4-javascript/
 
 ## Features
 
