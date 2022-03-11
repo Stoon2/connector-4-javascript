@@ -98,7 +98,8 @@ const checkWinningCells = (cells) => {
   }
 
   // players names to print on winning
-  statusSpan.textContent =` Congratulations ${yellowIsNext ? playerone : playertwo } has won!`
+  statusSpan.textContent =` Congratulations ${yellowIsNext ? playerone : playertwo } has won!` 
+  + String.fromCodePoint(0x1F64C);
   return true;
 };
 

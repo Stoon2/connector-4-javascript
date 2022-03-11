@@ -96,6 +96,7 @@ const checkWinningCells = (cells) => {
     cell.classList.add('win');
   }
   statusSpan.textContent =` Congratulations ${yellowIsNext ? playerone : playertwo } has won!`
+  + String.fromCodePoint(0x1F64C);
   return true;
 };
 
