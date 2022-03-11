@@ -9,6 +9,8 @@ const customConfirm = document.querySelector('.confirm');
 const yesBtn = document.getElementById("yes");
 const noBtn = document.getElementById("no");
 
+// Set Music Playback Time
+document.getElementsByTagName("audio")[0].currentTime = localStorage.getItem("songTime")
 
 // columns
 const column0 = [allCells[35], allCells[28], allCells[21], allCells[14], allCells[7], allCells[0], topCells[0]];
