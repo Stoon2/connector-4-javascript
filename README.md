@@ -2,7 +2,8 @@
 # Connect-four game
 
 Connect 4 JavaScript project for ITI .
-It is a very enjoyable game that you can play with the Computer, with a friend on the same machine.
+
+It is a very enjoyable game that you can play with the Computer and with a friend on the same machine.
 
 ## Features
 
@@ -11,7 +12,7 @@ It is a very enjoyable game that you can play with the Computer, with a friend o
 - level 1 win connect 4 rows or columns .
 - level 2 win connect 5 rows or columns or diagonals .
 - you can sign up and start playing .
-- have same level for the 2 modes .
+- have same levels for the 2 modes .
 
 ## How To Play Our Game
 
@@ -28,5 +29,5 @@ It is a very enjoyable game that you can play with the Computer, with a friend o
 - [@AbdelRahman Nabil](https://github.com/AbdelrahmanNabill)
 - [@Mohamed Elsayed](https://github.com/Stoon2)
 
-## Project Demo
+
 
